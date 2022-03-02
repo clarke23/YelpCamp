@@ -26,7 +26,7 @@ body{
     color: white;
     border-bottom-color:white;
 }
-.btn-secondary, .btn-secondary:hover{
+.btn-secondary{
     background-color: rgb(255,255,255,0.3);
     color: rgb(175, 175, 175);
     text-shadow: none;
