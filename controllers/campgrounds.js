@@ -24,7 +24,7 @@ module.exports.createCampground = async (req, res, next) => {
     campground.images = req.files.map(f => ({ url: f.path, filename: f.filename }))
     campground.owner = req.user._id
     await campground.save()
-    console.log(campground)
+    
     req.flash('success', 'Successfuly made a new campground!')
     res.redirect(`/campground/${campground._id}`)
 }
@@ -36,7 +36,7 @@ module.exports.showCampground = async (req, res) => {
             path: 'owner'
         }
     }).populate('owner');
-    console.log(campground)
+   
     if (!campground) {
         req.flash('error', 'This campground is not available!')
         return res.redirect('/campground')
