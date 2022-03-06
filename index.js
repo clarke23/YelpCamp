@@ -170,11 +170,12 @@ app.all('*', (req, res, next) => {
 // })
 app.use((err, req, res, next) => {
     const { statusCode = 500 } = err
+ 
     if (!err.message) err.message = 'Oh No, Something is wrong'
     res.status(statusCode).render('error', { err })
 })
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-    console.log(`Serving on port ${port}`)
-})
+var port = process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log("Server Has Started!");
+});
